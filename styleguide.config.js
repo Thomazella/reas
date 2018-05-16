@@ -63,7 +63,7 @@ module.exports = {
     },
     {
       name: "Components",
-      components: "src/components/**/[A-Z]*.js"
+      components: "src/components/**/index.js"
     }
   ]
 };
