@@ -4,7 +4,11 @@ import Markdown from "react-styleguidist/lib/rsg-components/Markdown";
 import { styled, Block } from "reas";
 import Editor from "./Editor";
 
-const Wrapper = styled(Block)``;
+const Wrapper = styled(Block)`
+  padding: 3em;
+  padding-top: 1.5em;
+  width: 100%;
+`;
 
 const getSection = ({ location, allSections }) => {
   const slugs = location.pathname.split("/").filter(Boolean);
@@ -13,7 +17,12 @@ const getSection = ({ location, allSections }) => {
       ? section
       : [...section.sections, ...section.components];
 
-    return items.find(item => item.slug === slug);
+    return items.find(
+      item =>
+        item.slug === slug ||
+        // regexes make foo => Foo
+        slug.match(/^\w/)[0].toUpperCase() + slug.match(/^\w(.*)/)[1]
+    );
   }, allSections);
 };
 

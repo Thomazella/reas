@@ -16,7 +16,7 @@ const StyledCodeMirror = styled(CodeMirror)`
     background-color: rgb(0, 0, 0, 0.05) !important;
     padding: 1em;
     height: auto;
-    max-width: 100vw;
+    max-width: 100%;
     margin-bottom: 20px;
 
     .CodeMirror-lines {
