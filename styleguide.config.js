@@ -49,7 +49,7 @@ module.exports = {
     },
     objectAssign: "Object.assign"
   },
-  skipComponentsWithoutExample: false,
+  skipComponentsWithoutExample: true,
   pagePerSection: true,
   sections: [
     {
@@ -83,7 +83,7 @@ module.exports = {
     },
     {
       name: "Components",
-      components: "src/components/**/index.js"
+      components: "src/components/**/*.js"
     }
   ]
 };

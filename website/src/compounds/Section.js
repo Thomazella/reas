@@ -17,12 +17,7 @@ const getSection = ({ location, allSections }) => {
       ? section
       : [...section.sections, ...section.components];
 
-    return items.find(
-      item =>
-        item.slug === slug ||
-        // regexes make foo => Foo
-        slug.match(/^\w/)[0].toUpperCase() + slug.match(/^\w(.*)/)[1]
-    );
+    return items.find(item => item.slug === slug);
   }, allSections);
 };
 
