@@ -8,6 +8,21 @@ const Wrapper = styled(Block)`
   padding: 3em;
   padding-top: 1.5em;
   width: 100%;
+
+  [class*="rsg--pre"] {
+    width: 100%;
+
+    code {
+      font-size: 14px;
+      @media screen and (max-width: 640px) {
+        font-size: 13px;
+      }
+    }
+
+    &:not([class*="preview"]) {
+      overflow: auto;
+    }
+  }
 `;
 
 const getSection = ({ location, allSections }) => {

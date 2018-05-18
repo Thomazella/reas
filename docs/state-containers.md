@@ -74,7 +74,7 @@ import { Provider } from 'reas'
 const App = () => (
   <Provider>
     ...
-  </Provider
+  </Provider>
 )
 
 render(<App />, document.getElementById('root'))
