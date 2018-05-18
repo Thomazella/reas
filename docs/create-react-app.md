@@ -4,13 +4,13 @@
 
 We need to install `create-react-app` first, you may need install [yarn](https://github.com/yarnpkg/yarn/) too.
 
-```bash
+```sh
 npm install -g create-react-app yarn
 ```
 
 Create a new project named `reas-demo`.
 
-```bash
+```sh
 create-react-app reas-demo
 ```
 
@@ -18,7 +18,7 @@ The tool will create and initialize environment and dependencies automatically.
 
 Then we go inside `reas-demo` and start it.
 
-```bash
+```sh
 cd reas-demo
 yarn start
 ```
@@ -27,7 +27,7 @@ yarn start
 
 Now we install `reas` from yarn or npm.
 
-```bash
+```sh
 yarn add reas
 ```
 
