@@ -58,6 +58,26 @@ module.exports = {
         {
           name: "Install",
           content: "docs/install.md"
+        },
+        {
+          name: "Create React App",
+          content: "docs/create-react-app.md"
+        },
+        {
+          name: "{as}",
+          content: "docs/as.md"
+        },
+        {
+          name: "Styling",
+          content: "docs/styling.md"
+        },
+        {
+          name: "State Containers",
+          content: "docs/state-containers.md"
+        },
+        {
+          name: "Behaviors",
+          content: "docs/behaviors.md"
         }
       ]
     },
