@@ -47,7 +47,7 @@ class Editor extends React.Component {
   };
 
   shouldComponentUpdate() {
-    return false;
+    return true;
   }
 
   handleChange = debounce((editor, metadata, newCode) => {

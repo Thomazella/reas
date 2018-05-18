@@ -35,8 +35,8 @@ const Section = props => {
     return (
       <Wrapper {...props}>
         {sectionContent.map(
-          ({ type, ...content }) =>
-            sectionMap[type] ? sectionMap[type](content) : null
+          ({ type, ...others }) =>
+            sectionMap[type] ? sectionMap[type](others) : null
         )}
       </Wrapper>
     );
