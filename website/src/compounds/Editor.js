@@ -6,13 +6,14 @@ import debounce from "lodash/debounce";
 import { UnControlled as CodeMirror } from "react-codemirror2";
 import "codemirror/mode/jsx/jsx";
 import "codemirror/lib/codemirror.css";
-import "codemirror/theme/dracula.css";
+import "codemirror/theme/paraiso-light.css";
 import ConfigContainer from "../containers/ConfigContainer";
 
 const StyledCodeMirror = styled(CodeMirror)`
   .CodeMirror {
+    border: 2px dashed rgba(0,0,0,0.4);
     font-family: "Fira Code", monospace;
-    line-height: 120%;
+    line-height: 1.2rem;
     background-color: rgb(0, 0, 0, 0.05) !important;
     padding: 1em;
     height: auto;
@@ -65,7 +66,7 @@ class Editor extends React.Component {
           <StyledCodeMirror
             value={code}
             onChange={this.handleChange}
-            options={{ ...editorConfig, theme: "dracula", readOnly }}
+            options={{ ...editorConfig, theme: "paraiso-light", readOnly }}
           />
         )}
       </ConfigContainer>

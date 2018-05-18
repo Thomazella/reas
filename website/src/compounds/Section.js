@@ -3,14 +3,24 @@ import Markdown from "react-styleguidist/lib/rsg-components/Markdown";
 // import Preview from "react-styleguidist/lib/rsg-components/Preview";
 import { styled, Block } from "reas";
 import Editor from "./Editor";
+import "highlight.js/styles/paraiso-light.css";
 
 const Wrapper = styled(Block)`
   padding: 3em;
   padding-top: 1.5em;
   width: 100%;
 
+  [class*="rsg--code"] {
+      font-family: "Fira Code", monospace;
+  }
+
   [class*="rsg--pre"] {
     width: 100%;
+    line-height: 1.2rem;
+    padding: 1em;
+    height: auto;
+    max-width: 100%;
+    margin-bottom: 20px;
 
     code {
       font-size: 14px;
