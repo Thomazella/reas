@@ -19,12 +19,16 @@ const StyledCodeMirror = styled(CodeMirror)`
     padding: 1em;
     height: auto;
     max-width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 2em;
 
     &:hover {
       box-shadow: inset 0 0 10px pink;
     }
 
+    .CodeMirror-scroll {
+      margin-bottom: -35px;
+      margin-right: -35px;
+    }
     .CodeMirror-lines {
       font-size: 14px;
       font-weight: 400;
@@ -43,24 +47,6 @@ const StyledCodeMirror = styled(CodeMirror)`
       `
     )};
   }
-`;
-
-const CodeWrapper = styled(Block)``;
-
-const CWrapper = styled(Flex)`
-  z-index: 100;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 1em;
-  margin-top: 3em;
-`;
-
-const StyledButton = styled(Button)``;
-
-const SInline = styled(Inline)`
-  margin-right: 1em;
-  font-weight: 700;
-  font-size: 1.1rem;
 `;
 
 class Editor extends React.Component {
