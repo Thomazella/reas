@@ -4,6 +4,7 @@ import Markdown from "react-styleguidist/lib/rsg-components/Markdown";
 import { styled, Block } from "reas";
 import Editor from "./Editor";
 import Preview from "./Preview";
+import CodeDemo from "./CodeDemo";
 
 const Wrapper = styled(Block)`
   padding: 3em;
@@ -48,12 +49,7 @@ const getSection = ({ location, allSections }) => {
 
 const sectionMap = {
   markdown: ({ content }) => <Markdown text={content} />,
-  code: ({ content, evalInContext }) => (
-    <div>
-      <Preview code={content} evalInContext={evalInContext} />
-      <Editor code={content} />
-    </div>
-  )
+  code: props => <CodeDemo {...props} />
 };
 
 const Section = props => {
