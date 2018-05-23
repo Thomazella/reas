@@ -86,17 +86,11 @@ class Editor extends React.Component {
     return (
       <ConfigContainer>
         {({ editorConfig }) => (
-          <CodeWrapper>
-            <CWrapper>
-              <SInline>{"Live demo"}</SInline>
-              <StyledButton>{"Reset"}</StyledButton>
-            </CWrapper>
-            <StyledCodeMirror
-              value={code}
-              onChange={this.handleChange}
-              options={{ ...editorConfig, theme: "dracula", readOnly }}
-            />
-          </CodeWrapper>
+          <StyledCodeMirror
+            value={code}
+            onChange={this.handleChange}
+            options={{ ...editorConfig, theme: "dracula", readOnly }}
+          />
         )}
       </ConfigContainer>
     );
