@@ -6,13 +6,13 @@ import debounce from "lodash/debounce";
 import { UnControlled as CodeMirror } from "react-codemirror2";
 import "codemirror/mode/jsx/jsx";
 import "codemirror/lib/codemirror.css";
-import "codemirror/theme/paraiso-light.css";
+import "codemirror/theme/dracula.css";
+// import "codemirror/theme/paraiso-light.css";
 import ConfigContainer from "../containers/ConfigContainer";
 import { Block, Button, Box, InlineBlock, Inline, Flex } from "reas";
 
 const StyledCodeMirror = styled(CodeMirror)`
   .CodeMirror {
-    border: 2px dashed rgba(0, 0, 0, 0.4);
     font-family: "Fira Code", monospace;
     line-height: 1.2rem;
     background-color: rgb(0, 0, 0, 0.05) !important;
@@ -22,7 +22,7 @@ const StyledCodeMirror = styled(CodeMirror)`
     margin-bottom: 20px;
 
     &:hover {
-      border: 2px solid Orange;
+      box-shadow: inset 0 0 10px pink;
     }
 
     .CodeMirror-lines {
@@ -94,7 +94,7 @@ class Editor extends React.Component {
             <StyledCodeMirror
               value={code}
               onChange={this.handleChange}
-              options={{ ...editorConfig, theme: "paraiso-light", readOnly }}
+              options={{ ...editorConfig, theme: "dracula", readOnly }}
             />
           </CodeWrapper>
         )}
