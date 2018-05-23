@@ -8,10 +8,11 @@ import "codemirror/mode/jsx/jsx";
 import "codemirror/lib/codemirror.css";
 import "codemirror/theme/paraiso-light.css";
 import ConfigContainer from "../containers/ConfigContainer";
+import { Block, Button, Box, InlineBlock, Inline, Flex } from "reas";
 
 const StyledCodeMirror = styled(CodeMirror)`
   .CodeMirror {
-    border: 2px dashed rgba(0,0,0,0.4);
+    border: 2px dashed rgba(0, 0, 0, 0.4);
     font-family: "Fira Code", monospace;
     line-height: 1.2rem;
     background-color: rgb(0, 0, 0, 0.05) !important;
@@ -19,6 +20,10 @@ const StyledCodeMirror = styled(CodeMirror)`
     height: auto;
     max-width: 100%;
     margin-bottom: 20px;
+
+    &:hover {
+      border: 2px solid Orange;
+    }
 
     .CodeMirror-lines {
       font-size: 14px;
@@ -38,6 +43,24 @@ const StyledCodeMirror = styled(CodeMirror)`
       `
     )};
   }
+`;
+
+const CodeWrapper = styled(Block)``;
+
+const CWrapper = styled(Flex)`
+  z-index: 100;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1em;
+  margin-top: 3em;
+`;
+
+const StyledButton = styled(Button)``;
+
+const SInline = styled(Inline)`
+  margin-right: 1em;
+  font-weight: 700;
+  font-size: 1.1rem;
 `;
 
 class Editor extends React.Component {
@@ -63,11 +86,17 @@ class Editor extends React.Component {
     return (
       <ConfigContainer>
         {({ editorConfig }) => (
-          <StyledCodeMirror
-            value={code}
-            onChange={this.handleChange}
-            options={{ ...editorConfig, theme: "paraiso-light", readOnly }}
-          />
+          <CodeWrapper>
+            <CWrapper>
+              <SInline>{"Live demo"}</SInline>
+              <StyledButton>{"Reset"}</StyledButton>
+            </CWrapper>
+            <StyledCodeMirror
+              value={code}
+              onChange={this.handleChange}
+              options={{ ...editorConfig, theme: "paraiso-light", readOnly }}
+            />
+          </CodeWrapper>
         )}
       </ConfigContainer>
     );
