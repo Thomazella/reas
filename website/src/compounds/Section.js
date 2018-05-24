@@ -9,10 +9,18 @@ import CodeDemo from "./CodeDemo";
 const Wrapper = styled(Block)`
   padding: 3em;
   padding-top: 1.5em;
-  width: 100%;
+  /* calc(100% - menu width) would be ideal*/
+  width: 90%;
 
   [class*="rsg--code"] {
     font-family: "Fira Code", monospace;
+  }
+
+  p > code {
+    background-color: rgba(0, 0, 0, 0.05);
+    padding: 2px 5px;
+    font-family: "Fira Code", monospace;
+    cursor: inherit;
   }
 
   [class*="rsg--pre"] {
