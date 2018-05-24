@@ -1,7 +1,7 @@
 import React from "react";
 import Markdown from "react-styleguidist/lib/rsg-components/Markdown";
 // import Preview from "react-styleguidist/lib/rsg-components/Preview";
-import { styled, Block } from "reas";
+import { styled, Block, Heading, InlineFlex } from "reas";
 import Editor from "./Editor";
 import Preview from "./Preview";
 import CodeDemo from "./CodeDemo";
@@ -48,6 +48,14 @@ const Wrapper = styled(Block)`
   }
 `;
 
+const Name = styled(Heading)`
+
+`;
+
+const PathLine = styled(InlineFlex)`
+  margin-bottom: 3em;
+`;
+
 const getSection = ({ location, allSections }) => {
   const slugs = location.pathname.split("/").filter(Boolean);
   return slugs.filter(Boolean).reduce((section, slug) => {
@@ -61,17 +69,20 @@ const getSection = ({ location, allSections }) => {
 
 const sectionMap = {
   markdown: ({ content }) => <Markdown text={content} />,
+  // random solution to key prop
   code: props => <CodeDemo {...props} key={props.content.slice(35)} />
 };
 
 const Section = props => {
   const section = getSection(props);
   const sectionContent = section.hasExamples
-    ? section.props.examples
-    : section.content;
+  ? section.props.examples
+  : section.content;
   if (sectionContent) {
     return (
       <Wrapper {...props}>
+        <Name as="h1">{section.name}</Name>
+        <PathLine>{section.pathLine}</PathLine>
         {sectionContent.map(
           ({ type, ...others }) =>
             sectionMap[type] ? sectionMap[type](others) : null
