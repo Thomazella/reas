@@ -75,7 +75,7 @@ class Editor extends React.Component {
           <StyledCodeMirror
             value={code}
             onChange={this.handleChange}
-            options={{ ...editorConfig, theme: "dracula", readOnly }}
+            options={{ ...editorConfig, theme: "dracula"}}
           />
         )}
       </ConfigContainer>

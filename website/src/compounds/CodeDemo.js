@@ -1,6 +1,7 @@
 import React from "react";
 import Editor from "./Editor";
 import Preview from "./Preview";
+import PropTypes from "prop-types";
 import { Block, Button, Inline, Flex, styled } from "reas";
 
 const CodeWrapper = styled(Block)`
@@ -30,19 +31,43 @@ const StyledInline = styled(Inline)`
   font-size: 1.1rem;
 `;
 
-const CodeDemo = props => (
-  <CodeWrapper>
-    <FlexWrapper>
-      <StyledInline>{"Interactive demo"}</StyledInline>
-      <StyledButton>{"Reset"}</StyledButton>
-    </FlexWrapper>
-    <Editor code={props.content} />
-    <FlexWrapper>
-      <StyledInline>{"Result"}</StyledInline>
-    </FlexWrapper>
-    <Spacer />
-    <Preview code={props.content} evalInContext={props.evalInContext} />
-  </CodeWrapper>
-);
+class CodeDemo extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      code: props.content,
+      content: props.content
+    };
+  }
+
+  static propTypes = {};
+
+  static getDerivedStateFromProps(nextProps, prevState) {
+    return prevState.content === nextProps.content
+      ? null
+      : { code: nextProps.content };
+  }
+
+  updateCode = newCode => this.setState({ code: newCode });
+
+  render() {
+    const { evalInContext } = this.props;
+    const { code } = this.state;
+    return (
+      <CodeWrapper>
+        <FlexWrapper>
+          <StyledInline>{"Interactive demo"}</StyledInline>
+          <StyledButton>{"Reset"}</StyledButton>
+        </FlexWrapper>
+        <Editor code={code} onChange={this.updateCode} />
+        <FlexWrapper>
+          <StyledInline>{"Result"}</StyledInline>
+        </FlexWrapper>
+        <Spacer />
+        <Preview code={code} evalInContext={evalInContext} />
+      </CodeWrapper>
+    );
+  }
+}
 
 export default CodeDemo;
