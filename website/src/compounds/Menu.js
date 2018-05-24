@@ -14,9 +14,16 @@ const SectionLink = styled(Link)`
   color: #333;
   font-size: 0.9em;
   margin: 20px 0 10px;
+  font-weight: bold;
 `;
 
-const MenuList = styled(List)``;
+const ComponentLink = styled(Link)`
+  line-height: 1.4;
+`;
+
+const MenuList = styled(List)`
+  padding-top: 1.5em;
+`;
 
 const Menu = ({ sections, ...props }) => (
   <Wrapper {...props}>
@@ -34,9 +41,9 @@ const Menu = ({ sections, ...props }) => (
           <MenuList>
             {mergeChildSections(section).map(child => (
               <List.Item key={child.slug}>
-                <Link as={RouterLink} to={`/${section.slug}/${child.slug}`}>
+                <ComponentLink as={RouterLink} to={`/${section.slug}/${child.slug}`}>
                   {child.name}
-                </Link>
+                </ComponentLink>
               </List.Item>
             ))}
           </MenuList>

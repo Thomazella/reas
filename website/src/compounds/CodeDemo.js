@@ -40,7 +40,7 @@ const CodeDemo = props => (
     <FlexWrapper>
       <StyledInline>{"Result"}</StyledInline>
     </FlexWrapper>
-    <Spacer/>
+    <Spacer />
     <Preview code={props.content} evalInContext={props.evalInContext} />
   </CodeWrapper>
 );

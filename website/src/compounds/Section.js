@@ -34,6 +34,10 @@ const Wrapper = styled(Block)`
       overflow: auto;
     }
   }
+
+  [class*="CodeWrapper"]:first-of-type {
+    margin-top: 0
+  }
 `;
 
 const getSection = ({ location, allSections }) => {
