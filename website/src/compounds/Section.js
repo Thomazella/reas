@@ -36,7 +36,7 @@ const Wrapper = styled(Block)`
   }
 
   [class*="CodeWrapper"]:first-of-type {
-    margin-top: 0
+    margin-top: 0;
   }
 `;
 
@@ -53,7 +53,7 @@ const getSection = ({ location, allSections }) => {
 
 const sectionMap = {
   markdown: ({ content }) => <Markdown text={content} />,
-  code: props => <CodeDemo {...props} />
+  code: props => <CodeDemo {...props} key={props.content.slice(35)} />
 };
 
 const Section = props => {
