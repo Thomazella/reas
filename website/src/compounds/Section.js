@@ -68,9 +68,9 @@ const getSection = ({ location, allSections }) => {
 };
 
 const sectionMap = {
-  markdown: ({ content }) => <Markdown text={content} />,
+  markdown: ({ content }) => <Markdown text={content} key={Math.random()} />,
   // random solution to key prop
-  code: props => <CodeDemo {...props} key={props.content.slice(35)} />
+  code: props => <CodeDemo {...props} key={Math.random()} />
 };
 
 const Section = props => {
