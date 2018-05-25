@@ -2,8 +2,6 @@ import React from "react";
 import Markdown from "react-styleguidist/lib/rsg-components/Markdown";
 // import Preview from "react-styleguidist/lib/rsg-components/Preview";
 import { styled, Block, Heading, InlineFlex } from "reas";
-import Editor from "./Editor";
-import Preview from "./Preview";
 import CodeDemo from "./CodeDemo";
 
 const Wrapper = styled(Block)`
@@ -48,9 +46,7 @@ const Wrapper = styled(Block)`
   }
 `;
 
-const Name = styled(Heading)`
-
-`;
+const Name = styled(Heading)``;
 
 const PathLine = styled(InlineFlex)`
   margin-bottom: 3em;
@@ -76,8 +72,8 @@ const sectionMap = {
 const Section = props => {
   const section = getSection(props);
   const sectionContent = section.hasExamples
-  ? section.props.examples
-  : section.content;
+    ? section.props.examples
+    : section.content;
   if (sectionContent) {
     return (
       <Wrapper {...props}>
