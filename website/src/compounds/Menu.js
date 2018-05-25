@@ -6,6 +6,7 @@ const mergeChildSections = object => [...object.sections, ...object.components];
 
 const Wrapper = styled(Block)`
   text-align: right;
+  min-width: 122px;
 `;
 
 const SectionLink = styled(Link)`
