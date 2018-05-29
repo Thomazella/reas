@@ -22,7 +22,9 @@ const responsive = (pass, fail) =>
 const Group = styled(Base)`
   display: flex;
   flex-direction: ${ifProp("vertical", "column", "row")};
-  ${responsive("flex-direction: column;")} > *, > * ${GroupItem} {
+  ${responsive("flex-direction: column;")}
+  > *,
+  > * ${GroupItem} {
     min-height: 2.5em;
     height: auto;
   }
