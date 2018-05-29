@@ -9,6 +9,7 @@ import code from "!!raw-loader!./Example.js";
 const Wrapper = styled(Flex)`
   width: 100%;
   justify-content: center;
+  background-color: #282a36;
   margin: 40px 0;
 `;
 

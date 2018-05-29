@@ -9,7 +9,6 @@ import "codemirror/lib/codemirror.css";
 import "codemirror/theme/dracula.css";
 // import "codemirror/theme/paraiso-light.css";
 import ConfigContainer from "../containers/ConfigContainer";
-import { Block, Button, Box, InlineBlock, Inline, Flex } from "reas";
 
 const StyledCodeMirror = styled(CodeMirror)`
   .CodeMirror {
@@ -20,10 +19,6 @@ const StyledCodeMirror = styled(CodeMirror)`
     height: auto;
     max-width: 100%;
     margin-bottom: 2em;
-
-    &:hover {
-      box-shadow: inset 0 0 10px pink;
-    }
 
     .CodeMirror-scroll {
       margin-bottom: -35px;
@@ -75,7 +70,7 @@ class Editor extends React.Component {
           <StyledCodeMirror
             value={code}
             onChange={this.handleChange}
-            options={{ ...editorConfig, theme: "dracula"}}
+            options={{ ...editorConfig, theme: "dracula", readOnly }}
           />
         )}
       </ConfigContainer>
