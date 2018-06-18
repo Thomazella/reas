@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import hoistNonReactStatics from "hoist-non-react-statics";
 import as from "../../enhancers/as";
 import Hidden from "../Hidden";
 
@@ -11,10 +12,12 @@ const TabsPanel = props => {
       aria-labelledby={`${tab}Tab`}
       destroy
       {...props}
-      visible={isCurrent(tab)}
+      visible={isCurrent && isCurrent(tab)}
     />
   );
 };
+
+hoistNonReactStatics(TabsPanel, Hidden);
 
 TabsPanel.propTypes = {
   tab: PropTypes.string.isRequired,
